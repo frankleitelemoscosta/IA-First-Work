@@ -1,10 +1,18 @@
 from collections import deque
+import numpy as np
 import time
+
+# variaveis do algoritmo
+duracao = ["0","0", "0", "0", "0"] # apenas inicializando a lista de duração
+averageTimeDFS = 0
+averageTimeBFS = 0
+sampleArray = np.array(duracao) 
+convertedArray = sampleArray.astype(float) 
 
 # Representação do labirinto como um grafo
 grafo_labirinto = {
     (4, 0): [(4, 1), (3, 0)],          # U 
-    (4, 1): [(4, 0), (3, 1), (4 ,2)],          # V 
+    (4, 1): [(4, 0), (3, 1), (4 ,2)],  # V 
     (4, 2): [(4, 1), (4, 3)],          # X 
     (4, 3): [(4, 2), (4, 4)],          # Y 
     (4, 4): [(3, 4), (4, 3)],          # Z 
@@ -37,6 +45,8 @@ grafo_labirinto = {
 inicio = (4, 0)  # posição inicial no labirinto
 fim = (0, 4)     # objetivo final
 
+# Daqui em diante está a implementação dos algoritmos BFS e DFS
+
 def BFS(inicio, fim, grafo):
     tempo_inicial = time.perf_counter()  # registra o tempo inicial
 
@@ -64,9 +74,12 @@ def BFS(inicio, fim, grafo):
 
     return None, duracao
 
-caminho, duracao = BFS(inicio, fim, grafo_labirinto)
+for i in range(5):
+    caminho, convertedArray[i] = DFS(inicio, fim, grafo_labirinto)
+    averageTimeBFS += convertedArray[i]
+
 print("-" * 150)
-print("Duração BFS:", duracao, "\nCaminho:", caminho)
+print("Duração média do BFS:", averageTimeBFS/5, "\nCaminho:", caminho)
 print("-" * 150)
 
 def DFS(inicio, fim, grafo):
@@ -95,7 +108,10 @@ def DFS(inicio, fim, grafo):
 
     return None, duracao
 
-caminho, duracao = DFS(inicio, fim, grafo_labirinto)
+for i in range(5):
+    caminho, convertedArray[i] = DFS(inicio, fim, grafo_labirinto)
+    averageTimeDFS += convertedArray[i] 
+
 print("-" * 150)
-print("Duração DFS:", duracao, "\nCaminho:", caminho)
+print("Duração média do DFS:", averageTimeDFS/5, "\nCaminho:", caminho)
 print("-" * 150)

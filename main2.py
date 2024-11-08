@@ -66,5 +66,36 @@ def BFS(inicio, fim, grafo):
 
 caminho, duracao = BFS(inicio, fim, grafo_labirinto)
 print("-" * 150)
-print("Duração:", duracao, "\nCaminho:", caminho)
+print("Duração BFS:", duracao, "\nCaminho:", caminho)
+print("-" * 150)
+
+def DFS(inicio, fim, grafo):
+    tempo_inicial = time.perf_counter()  
+
+    pilha_de_pesquisa = [(inicio, [inicio])]   
+    verificados = set()  
+
+    while pilha_de_pesquisa:
+        atual, caminho_atual = pilha_de_pesquisa.pop()   
+
+        
+        if atual == fim:
+            tempo_final = time.perf_counter()
+            duracao = tempo_final - tempo_inicial
+            return caminho_atual, duracao
+
+        verificados.add(atual) 
+        
+        for vizinho in grafo.get(atual, []):
+            if vizinho not in verificados:
+                pilha_de_pesquisa.append((vizinho, caminho_atual + [vizinho]))
+
+    tempo_final = time.perf_counter()
+    duracao = tempo_final - tempo_inicial
+
+    return None, duracao
+
+caminho, duracao = DFS(inicio, fim, grafo_labirinto)
+print("-" * 150)
+print("Duração DFS:", duracao, "\nCaminho:", caminho)
 print("-" * 150)

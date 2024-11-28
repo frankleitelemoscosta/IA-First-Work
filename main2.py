@@ -75,7 +75,7 @@ def BFS(inicio, fim, grafo):
     return None, duracao
 
 for i in range(5):
-    caminho, convertedArray[i] = DFS(inicio, fim, grafo_labirinto)
+    caminho, convertedArray[i] = BFS(inicio, fim, grafo_labirinto)
     averageTimeBFS += convertedArray[i]
 
 print("-" * 150)

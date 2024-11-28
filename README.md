@@ -1,6 +1,6 @@
 > Status finished :heavy_check_mark:
 
-# O caminho Guloso
+# Trabalho IA: Comparação entre Algoritmos de Busca Não Informada
 ## Problema
 
 <body>

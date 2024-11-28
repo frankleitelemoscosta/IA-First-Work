@@ -1,7 +1,7 @@
 > Status finished :heavy_check_mark:
 
 # Trabalho IA: Comparação entre Algoritmos de Busca Não Informada
-## Problema
+## Objetivo 🎯
 
 <body>
     <p>Implementar e comparar dois diferentes algoritmos de busca não informada aplicados a um problema
@@ -11,13 +11,13 @@ clássico de busca - o problema do labirinto.</p>
 ![image](https://github.com/user-attachments/assets/2e14cd4d-104b-4404-91f8-9f3fe3a1916b)
 
 
-## Descrição
+## Descrição 📜 
 
 <body>
     <p> O código foi projetado na linguagem python, implementa e compara os algoritmos de busca BFS (Busca em Largura) e DFS (Busca em Profundidade) para encontrar um caminho em um labirinto representado como um grafo. Ele mede o tempo médio de execução de cada algoritmo em 5 execuções e exibe o caminho encontrado para o destino.</p>
 </body>
 
-## Estrutura do Projeto
+## Estrutura do Projeto 🏗️
 - **Linguagem:** Python.
 - **Bibliotecas utilizadas:**
   - `collections.deque`: para implementar a fila de pesquisa no BFS.
@@ -25,7 +25,7 @@ clássico de busca - o problema do labirinto.</p>
   - `time`: para medir o tempo de execução.
   - `tracemalloc `: para medir o consumo de memória.
 
-## Representação do Labirinto
+## Representação do Labirinto ➡️
 O labirinto é representado como um grafo, onde cada posição é um nó, e os caminhos possíveis entre as posições são arestas. A representação do grafo é feita usando um dicionário Python:
 
 ```python
@@ -38,7 +38,7 @@ grafo_labirinto = {
 <p>Cada chave é uma coordenada (linha, coluna).</p>
 <p>Cada valor é uma lista de coordenadas vizinhas acessíveis.<p>
 
-## Ánalise dos Algoritmos Implementados
+## Ánalise dos Algoritmos Implementados 🔍
 ### BFS (Busca em Largura)
  - **Descrição**: Explora todos os vizinhos de um nó antes de passar para o próximo nível.
  - **Medidas de Desempenho**:
@@ -55,7 +55,7 @@ grafo_labirinto = {
     - **Completude**: Não é garantido encontrar a solução em todos os casos, especialmente em grafos com ciclos.
     - **Optimalidade**:  Não garante a solução mais curta.
 
-## Exemplo de Saída
+## Exemplo de Saída 💻
 
 ### BFS
 
@@ -73,13 +73,13 @@ Duração média do DFS: 3.651999868452549e-05
 Consumo médio de memória: 3.07 KB
 Caminho: [(4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (3, 4), (3, 3), (3, 2), (2, 2), (2, 3), (1, 3), (1, 2), (0, 2), (0, 3), (0, 4)]
 ```
-## Considerações Finais
+## Considerações Finais 📝
 
 - **BFS** é ideal para encontrar o menor caminho em grafos não ponderados, mas pode consumir muita memória.
 - **DFS** pode ser mais eficiente em termos de memória, mas não garante a solução mais curta.
  - Os resultados podem variar dependendo do tamanho e da estrutura do grafo utilizado.
 
-## Compilação e Execução 
+## Compilação e Execução ⚙️
 1. Certifique-se de que o Python 3.x está instalado no sistema.
 2. Instale a biblioteca numpy, se necessário:
  - ````  pip install numpy ````

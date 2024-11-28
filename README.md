@@ -5,9 +5,7 @@
 
 <body>
     <p>Implementar e comparar dois diferentes algoritmos de busca não informada aplicados a um problema
-clássico de busca - o problema do labirinto. Pode-se utilizar algoritmos discutidos em
-sala de aula ou outros algoritmos conhecidos. A atividade pode ser realizada individualmente ou em
-dupla.</p>
+clássico de busca - o problema do labirinto.</p>
 </body>
 
 ![image](https://github.com/user-attachments/assets/2e14cd4d-104b-4404-91f8-9f3fe3a1916b)
